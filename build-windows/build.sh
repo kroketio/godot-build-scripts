@@ -9,10 +9,7 @@ export OPTIONS="production=yes angle_libs=/root/angle mesa_libs=/root/mesa d3d12
 export OPTIONS_MONO="module_mono_enabled=yes"
 export TERM=xterm
 
-rm -rf godot
-mkdir godot
 cd godot
-tar xf /root/godot.tar.gz --strip-components=1
 
 # Classical
 

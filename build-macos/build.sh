@@ -10,10 +10,7 @@ export OPTIONS_MONO="module_mono_enabled=yes"
 export STRIP="x86_64-apple-darwin23.6-strip -u -r"
 export TERM=xterm
 
-rm -rf godot
-mkdir godot
 cd godot
-tar xf /root/godot.tar.gz --strip-components=1
 
 # Classical
 

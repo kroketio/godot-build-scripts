@@ -10,10 +10,7 @@ export TERM=xterm
 export DISPLAY=:0
 export PATH="${GODOT_SDK_LINUX_X86_64}/bin:${BASE_PATH}"
 
-rm -rf godot
-mkdir godot
 cd godot
-tar xf ../godot.tar.gz --strip-components=1
 
 # Mono
 

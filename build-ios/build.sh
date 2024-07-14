@@ -14,10 +14,7 @@ export TERM=xterm
 export IOS_SDK="17.5"
 export IOS_LIPO="/root/ioscross/arm64/bin/arm-apple-darwin11-lipo"
 
-rm -rf godot
-mkdir godot
 cd godot
-tar xf /root/godot.tar.gz --strip-components=1
 
 # Classical
 

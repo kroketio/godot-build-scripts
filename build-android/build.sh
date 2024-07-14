@@ -9,10 +9,7 @@ export OPTIONS="production=yes"
 export OPTIONS_MONO="module_mono_enabled=yes"
 export TERM=xterm
 
-rm -rf godot
-mkdir godot
 cd godot
-tar xf /root/godot.tar.gz --strip-components=1
 
 # Environment variables and keystore needed for signing store editor build,
 # as well as signing and publishing to MavenCentral.
