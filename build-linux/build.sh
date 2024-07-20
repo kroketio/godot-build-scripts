@@ -23,7 +23,6 @@ if [ "${CLASSICAL}" == "1" ]; then
   cp -rvp bin/* /root/out/x86_64/tools
   rm -rf bin
 
-  $SCONS platform=linuxbsd arch=x86_64 $OPTIONS target=template_debug
   $SCONS platform=linuxbsd arch=x86_64 $OPTIONS target=template_release
   mkdir -p /root/out/x86_64/templates
   cp -rvp bin/* /root/out/x86_64/templates
@@ -36,7 +35,6 @@ if [ "${CLASSICAL}" == "1" ]; then
   cp -rvp bin/* /root/out/arm64/tools
   rm -rf bin
 
-  $SCONS platform=linuxbsd arch=arm64 $OPTIONS target=template_debug
   $SCONS platform=linuxbsd arch=arm64 $OPTIONS target=template_release
   mkdir -p /root/out/arm64/templates
   cp -rvp bin/* /root/out/arm64/templates
@@ -59,7 +57,6 @@ if [ "${MONO}" == "1" ]; then
   cp -rvp bin/* /root/out/x86_64/tools-mono
   rm -rf bin
 
-  $SCONS platform=linuxbsd arch=x86_64 $OPTIONS $OPTIONS_MONO target=template_debug
   $SCONS platform=linuxbsd arch=x86_64 $OPTIONS $OPTIONS_MONO target=template_release
   mkdir -p /root/out/x86_64/templates-mono
   cp -rvp bin/* /root/out/x86_64/templates-mono
@@ -73,7 +70,6 @@ if [ "${MONO}" == "1" ]; then
   cp -rvp bin/* /root/out/arm64/tools-mono
   rm -rf bin
 
-  $SCONS platform=linuxbsd arch=arm64 $OPTIONS $OPTIONS_MONO target=template_debug
   $SCONS platform=linuxbsd arch=arm64 $OPTIONS $OPTIONS_MONO target=template_release
   mkdir -p /root/out/arm64/templates-mono
   cp -rvp bin/* /root/out/arm64/templates-mono
