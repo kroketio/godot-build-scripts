@@ -10,7 +10,7 @@ export TERM=xterm
 export DISPLAY=:0
 export PATH="${GODOT_SDK_LINUX_X86_64}/bin:${BASE_PATH}"
 
-cd godot
+cd out/godot
 
 # Mono
 
@@ -21,8 +21,8 @@ if [ "${MONO}" == "1" ]; then
 
   ${SCONS} platform=linuxbsd ${OPTIONS} target=editor module_mono_enabled=yes
 
-  rm -rf /root/mono-glue/*
-  bin/godot.linuxbsd.editor.x86_64.mono --headless --generate-mono-glue /root/mono-glue
+  rm -rf /root/out/mono-glue/*
+  bin/godot.linuxbsd.editor.x86_64.mono --headless --generate-mono-glue /root/out/mono-glue
 fi
 
 echo "Mono glue generated successfully"
