@@ -34,19 +34,19 @@ if [ "${CLASSICAL}" == "1" ]; then
   cp -rvp bin/* /root/out/x86_64/templates
   rm -rf bin
 
-  export PATH="${GODOT_SDK_LINUX_ARM64}/bin:${BASE_PATH}"
+  # export PATH="${GODOT_SDK_LINUX_ARM64}/bin:${BASE_PATH}"
 
-  $SCONS platform=linuxbsd arch=arm64 $OPTIONS target=editor
-  mkdir -p /root/out/arm64/tools
-  cp -rvp bin/* /root/out/arm64/tools
-  rm -rf bin
+  # $SCONS platform=linuxbsd arch=arm64 $OPTIONS target=editor
+  # mkdir -p /root/out/arm64/tools
+  # cp -rvp bin/* /root/out/arm64/tools
+  # rm -rf bin
 
-  # `extension_api.json` generation for arm64 is done later via qemu
+  # # `extension_api.json` generation for arm64 is done later via qemu
 
-  $SCONS platform=linuxbsd arch=arm64 $OPTIONS target=template_release
-  mkdir -p /root/out/arm64/templates
-  cp -rvp bin/* /root/out/arm64/templates
-  rm -rf bin
+  # $SCONS platform=linuxbsd arch=arm64 $OPTIONS target=template_release
+  # mkdir -p /root/out/arm64/templates
+  # cp -rvp bin/* /root/out/arm64/templates
+  # rm -rf bin
 fi
 
 # Mono
@@ -76,24 +76,20 @@ if [ "${MONO}" == "1" ]; then
   cp extension_api.json /root/out/files/linux_x86_64_mono_extension_api.json
   popd
 
-  export PATH="${GODOT_SDK_LINUX_ARM64}/bin:${BASE_PATH}"
+  # export PATH="${GODOT_SDK_LINUX_ARM64}/bin:${BASE_PATH}"
 
-  $SCONS platform=linuxbsd arch=arm64 $OPTIONS $OPTIONS_MONO target=editor
-  ./modules/mono/build_scripts/build_assemblies.py --godot-output-dir=./bin --godot-platform=linuxbsd
-  mkdir -p /root/out/arm64/tools-mono
-  cp -rvp bin/* /root/out/arm64/tools-mono
-  rm -rf bin
+  # $SCONS platform=linuxbsd arch=arm64 $OPTIONS $OPTIONS_MONO target=editor
+  # ./modules/mono/build_scripts/build_assemblies.py --godot-output-dir=./bin --godot-platform=linuxbsd
+  # mkdir -p /root/out/arm64/tools-mono
+  # cp -rvp bin/* /root/out/arm64/tools-mono
+  # rm -rf bin
 
-  # `extension_api.json` generation for arm64 is done later via qemu
+  # # `extension_api.json` generation for arm64 is done later via qemu
 
-  $SCONS platform=linuxbsd arch=arm64 $OPTIONS $OPTIONS_MONO target=template_release
-  mkdir -p /root/out/arm64/templates-mono
-  cp -rvp bin/* /root/out/arm64/templates-mono
-  rm -rf bin
+  # $SCONS platform=linuxbsd arch=arm64 $OPTIONS $OPTIONS_MONO target=template_release
+  # mkdir -p /root/out/arm64/templates-mono
+  # cp -rvp bin/* /root/out/arm64/templates-mono
+  # rm -rf bin
 fi
 
-# gd-webview
-# if [ "${COMPILE_WEBVIEW}" == "1" ]; then
-
-# fi
 echo "Linux build successful"
