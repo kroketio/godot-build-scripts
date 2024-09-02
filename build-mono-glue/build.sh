@@ -10,7 +10,7 @@ export TERM=xterm
 export DISPLAY=:0
 export PATH="${GODOT_SDK_LINUX_X86_64}/bin:${BASE_PATH}"
 
-cd out/godot
+cd out/godot_mono-glue
 
 # Mono
 
