@@ -15,11 +15,11 @@ export TERM=xterm
 if [ "${CLASSICAL}" == "1" ]; then
   echo "Starting classical build for macOS..."
 
-  pushd /root/out/godot_x86_64_macos-release
-    rm -rf bin || true
-    $SCONS platform=macos $OPTIONS arch=x86_64 target=editor
-    $SCONS platform=macos $OPTIONS arch=x86_64 target=template_release
-  popd
+  # pushd /root/out/godot_x86_64_macos-release
+  #   rm -rf bin || true
+  #   $SCONS platform=macos $OPTIONS arch=x86_64 target=editor
+  #   $SCONS platform=macos $OPTIONS arch=x86_64 target=template_release
+  # popd
 
   pushd /root/out/godot_arm64_macos-release
     rm -rf bin || true
