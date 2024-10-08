@@ -9,22 +9,23 @@ export OPTIONS="production=yes angle_libs=/root/angle mesa_libs=/root/mesa d3d12
 export OPTIONS_MONO="module_mono_enabled=yes"
 export TERM=xterm
 
-cd out/godot
-
 # Classical
 
 if [ "${CLASSICAL}" == "1" ]; then
   echo "Starting classical build for Windows..."
 
-  $SCONS platform=windows arch=x86_64 $OPTIONS target=editor
-  mkdir -p /root/out/x86_64/tools
-  cp -rvp bin/* /root/out/x86_64/tools
-  rm -rf bin
+  pushd /root/out/godot_x86_64_windows-release
+    rm -rf bin || true
+    $SCONS platform=windows arch=x86_64 $OPTIONS target=editor
+    mkdir -p /root/out/x86_64/tools
+    cp -rvp bin/* /root/out/x86_64/tools
+    rm -rf bin
 
-  $SCONS platform=windows arch=x86_64 $OPTIONS target=template_release
-  mkdir -p /root/out/x86_64/templates
-  cp -rvp bin/* /root/out/x86_64/templates
-  rm -rf bin
+    $SCONS platform=windows arch=x86_64 $OPTIONS target=template_release
+    mkdir -p /root/out/x86_64/templates
+    cp -rvp bin/* /root/out/x86_64/templates
+    rm -rf bin
+  popd
 
   # $SCONS platform=windows arch=x86_32 $OPTIONS target=editor
   # mkdir -p /root/out/x86_32/tools
